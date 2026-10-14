@@ -6,7 +6,7 @@ This is a preview theme with light and dark modes.
 
 ## Preview status
 
-An independent review scored this version 75/100 on 14 October 2026.
+An independent review scored source version 1.0.0 75/100 on 14 October 2026.
 The NoteMods acceptance gate requires at least 95/100. This version remains on hold.
 Obsidian directory approval is not claimed.
 
@@ -33,7 +33,7 @@ They show Live Preview and Reading view side by side.
 
 ## Install the preview
 
-1. Download `theme.css` and `manifest.json` from the `1.0.0` release.
+1. Download `theme.css` and `manifest.json` from the `1.0.1` release.
 2. Open your vault folder. Show hidden folders if necessary.
 3. Create `.obsidian/themes/Terminal Notes/` inside the vault.
 4. Put both files in that folder. Keep their file names unchanged.
@@ -67,7 +67,22 @@ Use a test note. Remove personal information from screenshots before you send th
 ## Credits and licence
 
 The original manifest credits U3 Theme Factory.
-NoteMods maintains this preview repository. The original CSS, manifest, and licence are preserved.
+NoteMods maintains this preview repository. The original CSS and copyright credits are preserved.
+Metadata and licence formatting were corrected for directory review. The MIT terms are unchanged.
 See [LICENSE](./LICENSE) for the MIT terms.
 
 [View the NoteMods catalog](https://notemods.com/themes/).
+
+## Original design description
+
+A monospace-first, square-cornered phosphor theme for terminal-flavoured technical notes.
+
+## Source provenance
+
+Original CSS in this directory (theme.css) is original work authored for this project.
+
+## Version 1.0.1
+
+This update corrects repository metadata. The theme CSS is unchanged.
+The score above is historical. These current repository files have not received a new independent review.
+The 95/100 acceptance gate remains unmet.

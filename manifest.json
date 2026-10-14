@@ -1,7 +1,6 @@
 {
   "name": "Terminal Notes",
   "author": "U3 Theme Factory",
-  "version": "1.0.0",
-  "minAppVersion": "1.1.0",
-  "description": "A monospace-first, square-cornered phosphor theme for terminal-flavoured technical notes."
+  "version": "1.0.1",
+  "minAppVersion": "1.1.0"
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "theme": "Terminal Notes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "status": "HOLD",
   "score": 75,
   "requiredScore": 95,
@@ -10,5 +10,8 @@
   "accepted": false,
   "directoryApprovalClaimed": false,
   "majorDefects": [],
-  "note": "This records the source review. New repository documentation has not been rescored."
+  "note": "The score records source version 1.0.0. Current 1.0.1 metadata and documentation have not received an independent review. Theme CSS is unchanged. The 95/100 acceptance gate remains unmet.",
+  "historicalReviewVersion": "1.0.0",
+  "historicalScore": 75,
+  "currentArtifactsIndependentlyReviewed": false
 }
