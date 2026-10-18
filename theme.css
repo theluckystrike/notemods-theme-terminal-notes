@@ -113,7 +113,7 @@ body {
   --link-unresolved-color: var(--term-ink-faint);
 
   --tag-color: var(--term-accent-strong);
-  --tag-background: color-mix(in srgb, var(--term-accent) 12%, transparent);
+  --tag-background: transparent;
   --tag-background-hover: color-mix(in srgb, var(--term-accent) 20%, transparent);
   --tag-color-hover: var(--term-accent-strong);
 
@@ -221,7 +221,7 @@ body {
   --link-unresolved-color: var(--term-ink-faint);
 
   --tag-color: var(--term-accent-strong);
-  --tag-background: color-mix(in srgb, var(--term-accent) 12%, transparent);
+  --tag-background: transparent;
   --tag-background-hover: color-mix(in srgb, var(--term-accent) 20%, transparent);
   --tag-color-hover: var(--term-accent-strong);
 
@@ -316,7 +316,7 @@ body {
 
 /* ---------- lists ------------------------------------------------------- */
 .markdown-rendered ul,
-.markdown-preview-view ul { padding-inline-start: 1.5em; list-style-type: square; }
+.markdown-preview-view ul { padding-inline-start: var(--list-indent); list-style-type: square; }
 .markdown-rendered ol,
 .markdown-preview-view ol { padding-inline-start: 1.7em; }
 .markdown-rendered li::marker,
@@ -384,6 +384,7 @@ body {
 /* ---------- tables: full ASCII-style grid ------------------------------ */
 .markdown-rendered table,
 .markdown-preview-view table {
+  width: 100%;
   border-collapse: collapse;
   border: 1px solid var(--term-rule);
   font-size: var(--table-text-size);
@@ -443,18 +444,7 @@ body {
 .nav-file-title.is-active { font-weight: 700; }
 
 /* ---------- focus: dashed terminal outline ----------------------------- */
-:focus-visible { outline: 2px dashed var(--term-accent); outline-offset: 2px; }
 input:focus, textarea:focus, select:focus { border-color: var(--term-accent); }
-
-/* ---------- reduced motion --------------------------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  body.theme-dark *, body.theme-light *,
-  body.theme-dark *::before, body.theme-light *::before,
-  body.theme-dark *::after, body.theme-light *::after {
-    transition-duration: 0s; animation-duration: 0s;
-    animation-iteration-count: 1; scroll-behavior: auto;
-  }
-}
 
 /* Terminal records use a compact grid and explicit heading levels. */
 body {
@@ -497,7 +487,6 @@ body {
 }
 .callout .callout-content { color: var(--text-normal); }
 /* Light-mode status inks keep the same frame and icon grammar. */
-.theme-light .callout { --callout-color: 15, 107, 48; }
 .theme-light .callout:is([data-callout="note"], [data-callout="info"], [data-callout="todo"], [data-callout="tip"], [data-callout="hint"], [data-callout="success"], [data-callout="check"], [data-callout="done"]) { --callout-color: 15, 107, 48; }
 .theme-light .callout:is([data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"]) { --callout-color: 24, 86, 138; }
 .theme-light .callout:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) { --callout-color: 113, 60, 155; }
@@ -510,15 +499,6 @@ body .vertical-tab-nav-item.is-active {
   color: var(--text-on-accent);
 }
 .nav-file-title.is-active { box-shadow: inset 2px 0 0 var(--term-accent); }
-/* Dashed keyboard focus matches the terminal rule system. */
-body.theme-dark :focus-visible,
-body.theme-light :focus-visible {
-  outline: 2px dashed var(--text-normal);
-  outline-offset: 3px;
-  box-shadow: none;
-}
-body.theme-light .cm-content:focus-visible,
-body.theme-dark .cm-content:focus-visible { outline: none; }
 @media (max-width: 600px) {
   body { --file-margins: 16px; --h1-size: 1.45em; --h2-size: 1.2em; --table-cell-padding: 5px 7px; }
   .markdown-rendered h1 { overflow-wrap: anywhere; letter-spacing: 0.03em; }
@@ -565,37 +545,51 @@ body .vertical-tab-nav-item.is-active .vertical-tab-nav-item-icon,
 body .vertical-tab-nav-item.is-active .svg-icon { color: var(--text-on-accent); }
 body .setting-item.setting-item-heading { border-top: none; }
 
-/* The caret identifies editor focus. Control rings stay local to controls. */
+/* Dashed control rings stay local. The editor uses a viewport rail and a caret. */
 html body:is(.theme-light, .theme-dark) :is(button, a, input, textarea, select, [tabindex], .clickable-icon, .checkbox-container):not(.cm-content):focus-visible {
   outline: 2px dashed var(--text-normal); outline-offset: 2px; box-shadow: none;
 }
 body.theme-light a:focus-visible, body.theme-dark a:focus-visible {
   outline-offset: 1px; outline-width: 1px;
 }
-html body:is(.theme-light, .theme-dark) .markdown-source-view :is(.cm-content:focus-visible, .cm-editor.cm-focused) {
-  outline: none; box-shadow: none;
+html body:is(.theme-light, .theme-dark) .markdown-source-view .cm-content:focus-visible {
+  outline: none; box-shadow: none; caret-color: var(--text-normal);
+}
+html body:is(.theme-light, .theme-dark) .markdown-source-view .cm-editor.cm-focused .cm-scroller {
+  box-shadow: inset 3px 0 0 var(--term-ink-muted);
 }
 body .clickable-icon[aria-disabled="true"]:focus-visible { opacity: 1; }
 body .clickable-icon[aria-disabled="true"]:focus-visible svg { opacity: 0.4; }
-body .markdown-source-view.mod-cm6 .cm-table-widget .table-wrapper { overflow: visible; }
+body .markdown-source-view.mod-cm6 .cm-table-widget .table-wrapper { overflow: visible; width: 100%; }
+body .markdown-source-view.mod-cm6 .cm-table-widget table { width: 100%; }
 
 /* Continuous background frames avoid an indented code rail. */
 body .markdown-source-view.mod-cm6 .HyperMD-codeblock { border: none; }
 body .markdown-source-view.mod-cm6 .HyperMD-codeblock-bg {
-  border-inline-start: 3px solid var(--term-accent);
+  border-inline-start: none;
   border-inline-end: 1px solid var(--term-rule);
+  border-radius: 0;
+  inset-inline-end: 0;
+}
+body .markdown-source-view.mod-cm6 .HyperMD-codeblock-bg::before {
+  content: ""; position: absolute;
+  inset-inline-start: 0; top: -1px; bottom: -1px; width: 3px;
+  background: var(--term-accent); pointer-events: none;
 }
 body .markdown-source-view.mod-cm6 .HyperMD-codeblock-begin-bg { border-top: 1px solid var(--term-rule); }
 body .markdown-source-view.mod-cm6 .HyperMD-codeblock-end-bg { border-bottom: 1px solid var(--term-rule); }
 body .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-indent::before { display: none; }
-body .markdown-source-view.mod-cm6 .cm-content span.cm-inline-code:not(.cm-formatting) {
+body .markdown-source-view.mod-cm6 .cm-content span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code) {
   color: var(--code-normal); background: var(--term-code-bg);
   border: 1px solid var(--term-rule); border-radius: 0; padding: 0.05em 0.2em;
 }
 body .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
   background: var(--term-bg-2); color: var(--term-ink-muted); font-style: normal;
 }
-body .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote::before { border-inline-start: 3px solid var(--term-accent); }
+body .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+  box-shadow: inset 3px 0 0 var(--term-accent); border-radius: 0;
+}
+body .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote::before { border-inline-start: none; }
 .markdown-rendered .task-list-item.is-checked > :is(ul, ol) {
   display: inline-block; width: 100%; color: var(--text-normal);
 }
@@ -609,7 +603,7 @@ body .search-result-file-match.is-selected {
 }
 body .suggestion-item.is-selected :is(.suggestion-title, .suggestion-note, .suggestion-hotkey, .suggestion-content) { color: inherit; }
 .prompt { border-top: 3px solid var(--term-accent); border-radius: 0; }
-.prompt-input-container { border-bottom: 1px dashed var(--term-rule); }
+.prompt-input-container { border-bottom: none; }
 body .setting-item-control :is(button:not(.mod-cta):not(.clickable-icon), select.dropdown) {
   border: 1px solid var(--term-rule); background-color: var(--interactive-normal);
 }
@@ -630,4 +624,38 @@ body .markdown-source-view.mod-cm6 .cm-content span.cm-formatting-code {
   border: none; padding-inline: 0; background: transparent;
 }
 
-/* Keep Obsidian node-inserted lifecycle events. Zero duration removes visible motion. */
+/* An indented code block has one background frame. Its text spans have no boxes. */
+body .markdown-source-view.mod-cm6 .HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) { border-top: 0; }
+body .markdown-source-view.mod-cm6 .HyperMD-codeblock-bg:not(.HyperMD-codeblock-end-bg) { border-bottom: 0; }
+body .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-inline-code,
+body .markdown-source-view.mod-cm6 .cm-hmd-indented-code {
+  border: none; border-radius: 0; padding: 0; background: transparent;
+}
+body .search-result-file-matches { border: none; border-radius: 0; box-shadow: none; }
+body .search-result-file-match { border: none; border-bottom: 1px dashed var(--term-rule); border-radius: 0; }
+body .search-result-file-matched-text { font-weight: 750; }
+
+/* ch uses the code font on code lines. Use the parent column width instead. */
+body .markdown-source-view.mod-cm6.is-readable-line-width .cm-line.HyperMD-codeblock {
+  max-width: 100%;
+}
+
+/* Reading and Live Preview use one indent per list level. */
+body { --list-marker-color: var(--term-accent); }
+body .markdown-rendered :is(ul, ol) { padding-inline-start: 0; }
+body .markdown-rendered li > :is(ul, ol) { margin-inline-start: 0; }
+body .markdown-source-view.mod-cm6 .cm-formatting-list-ol {
+  color: var(--term-accent); font-family: var(--font-monospace-theme); font-weight: 700;
+}
+body .markdown-source-view.mod-cm6 .list-bullet::after { background-color: var(--term-accent); }
+body .markdown-source-view.mod-cm6 .HyperMD-list-line { --term-list-level: 0; }
+body .markdown-source-view.mod-cm6 .HyperMD-list-line-2 { --term-list-level: 1; }
+body .markdown-source-view.mod-cm6 .HyperMD-list-line-3 { --term-list-level: 2; }
+body .markdown-source-view.mod-cm6 .HyperMD-list-line-4 { --term-list-level: 3; }
+body .markdown-source-view.mod-cm6 .HyperMD-list-line-5 { --term-list-level: 4; }
+body .markdown-source-view.mod-cm6 .HyperMD-list-line-6 { --term-list-level: 5; }
+body .markdown-source-view.mod-cm6 .HyperMD-list-line-7 { --term-list-level: 6; }
+body .markdown-source-view.mod-cm6 .HyperMD-list-line-8 { --term-list-level: 7; }
+body .markdown-source-view.mod-cm6 .HyperMD-list-line > .cm-hmd-list-indent {
+  min-width: calc(var(--list-indent) * var(--term-list-level));
+}

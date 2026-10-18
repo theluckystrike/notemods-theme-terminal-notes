@@ -68,6 +68,8 @@ This theme does not include Style Settings controls.
 - The theme presents command notes. It does not execute commands or add a terminal.
 - Accent changes can reduce contrast. Check selected text and focus after a color change.
 - Color mixing uses the current desktop renderer. The oldest declared app version was not tested.
+- The native ribbon, tab headers, status bar, and file list were not reached by the Tab trace in Obsidian 1.14.4.
+- The editor shows focus with an ink rail and a clear caret.
 - System monospace fonts differ between operating systems. Line wraps can change with the font.
 
 ## License
