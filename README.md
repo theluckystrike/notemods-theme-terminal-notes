@@ -74,5 +74,5 @@ This theme does not include Style Settings controls.
 
 ## License
 
-[MIT License](LICENSE). Copyright (c) 2026 U3 Theme Factory.
-NoteMods maintains this theme. The original copyright notice remains in LICENSE.
+[MIT License](LICENSE). Copyright (c) 2026 NoteMods.
+NoteMods maintains this theme.
