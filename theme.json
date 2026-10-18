@@ -1,0 +1,30 @@
+{
+  "slug": "terminal-notes",
+  "family": "technical",
+  "useCase": "Command references, shell logs, and technical notes in a monospace terminal layout.",
+  "distinctFeatures": [
+    "Phosphor green terminal palette with a pale green light mode",
+    "Monospace text and interface with square controls",
+    "Dashed section rules and framed callout headings",
+    "ASCII-style table grids and dashed note embeds",
+    "Dashed control focus rings"
+  ],
+  "modes": [
+    "light",
+    "dark"
+  ],
+  "contrastTokens": {
+    "normalText": {
+      "foreground": "--text-normal",
+      "background": "--background-primary"
+    },
+    "link": {
+      "foreground": "--link-color",
+      "background": "--background-primary"
+    },
+    "uiFocus": {
+      "foreground": "--text-normal",
+      "background": "--background-primary"
+    }
+  }
+}

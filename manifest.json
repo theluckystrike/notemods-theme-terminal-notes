@@ -1,6 +1,8 @@
 {
   "name": "Terminal Notes",
-  "author": "U3 Theme Factory",
-  "version": "1.0.1",
-  "minAppVersion": "1.1.0"
+  "version": "1.0.2",
+  "minAppVersion": "1.1.0",
+  "author": "NoteMods",
+  "authorUrl": "https://notemods.com/themes/",
+  "fundingUrl": "https://github.com/sponsors/theluckystrike"
 }

@@ -1,16 +1,15 @@
 {
   "schemaVersion": 1,
   "theme": "Terminal Notes",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "status": "HOLD",
-  "score": 75,
   "requiredScore": 95,
   "reviewedAt": "2026-10-14T15:05:14",
   "reviewer": "claude-orchestrator",
   "accepted": false,
   "directoryApprovalClaimed": false,
   "majorDefects": [],
-  "note": "The score records source version 1.0.0. Current 1.0.1 metadata and documentation have not received an independent review. Theme CSS is unchanged. The 95/100 acceptance gate remains unmet.",
+  "note": "Historical review applies to source version 1.0.0. Version 1.0.2 changes CSS, metadata, and documentation. Independent review is pending.",
   "historicalReviewVersion": "1.0.0",
   "historicalScore": 75,
   "currentArtifactsIndependentlyReviewed": false

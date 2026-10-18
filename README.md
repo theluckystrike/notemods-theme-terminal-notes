@@ -1,88 +1,74 @@
 # Terminal Notes
 
-Monospace text and square controls for your shell notes and runbooks.
-
-This is a preview theme with light and dark modes.
-
-## Preview status
-
-An independent review scored source version 1.0.0 75/100 on 14 October 2026.
-The NoteMods acceptance gate requires at least 95/100. This version remains on hold.
-Obsidian directory approval is not claimed.
-
-## Design
-
-- Green terminal palette.
-- Dashed focus outline.
-- Full table grids.
-
-These styles change presentation. They do not add application features or plugins.
+Terminal Notes is an Obsidian theme for command references, shell logs, and technical notes.
+Monospace text, square controls, and dashed rules give the page a terminal structure.
+Dark mode uses phosphor green on near-black. Light mode uses dark green on pale paper.
+Framed callouts keep labels and icons visible. Grid tables suit command and status records.
 
 ## Screenshots
 
-These are unaltered captures from Obsidian 1.14.4 with a test note.
-They show Live Preview and Reading view side by side.
+These images show the desktop renderer with a test note.
 
-### Light mode
+![Light mode](images/light-main-1280-preview.jpg)
+![Dark mode](images/dark-main-1280-preview.jpg)
+![Code and embedded content](images/light-preview-code.jpg)
+![Narrow desktop layout](images/dark-main-420-preview.jpg)
 
-![Terminal Notes in light mode](./images/light.jpg)
+## Install
 
-### Dark mode
+1. Download `theme.css` and `manifest.json` from this repository.
+2. Open your vault folder.
+3. Create the folder `.obsidian/themes/Terminal Notes/`.
+4. Put both files in that folder.
+5. Open Settings, then Appearance in Obsidian.
+6. Select **Terminal Notes** in the theme list.
 
-![Terminal Notes in dark mode](./images/dark.jpg)
+Use the manifest name for the install folder. The repository name is not the install folder name.
+This source update is version 1.0.2. It is not a published release.
 
-## Install the preview
+## Uninstall
 
-1. Download `theme.css` and `manifest.json` from the `1.0.1` release.
-2. Open your vault folder. Show hidden folders if necessary.
-3. Create `.obsidian/themes/Terminal Notes/` inside the vault.
-4. Put both files in that folder. Keep their file names unchanged.
-5. Open Obsidian. Go to Settings, then Appearance.
-6. Select `Terminal Notes` in the Themes list. Restart Obsidian if it is absent.
+1. Select the default theme in Settings, then Appearance.
+2. Remove `.obsidian/themes/Terminal Notes/` from the vault.
 
-You can also copy these two files from the repository.
-The manifest declares Obsidian 1.1.0 as the minimum version.
-The captures verify only the desktop version stated above.
+The theme does not change note text.
 
-## Remove the preview
+## Compatibility
 
-Select the default theme in Settings, then Appearance.
-You can then remove the `Terminal Notes` folder from `.obsidian/themes/`.
-Your note files remain in your vault.
+The manifest requires Obsidian 1.1.0 or later.
+The desktop renderer was tested with Obsidian 1.14.4.
+Mobile use was not tested. A narrow desktop capture does not test a mobile device.
+Community plugin views and screen readers were not tested.
+Independent review of version 1.0.2 is pending. The 95-point acceptance gate is not claimed.
+
+## Customization
+
+Add a CSS snippet in Settings, then Appearance to override theme variables.
+For example, this snippet gives technical notes more reading width:
+
+```css
+body {
+  --file-line-width: 84ch;
+  --line-height-normal: 1.7;
+}
+```
+
+The `--term-accent` variable controls green accents.
+The `--term-bg`, `--term-ink`, and `--term-rule` variables control backgrounds, text, and borders.
+Set these variables under `.theme-light` or `.theme-dark` in your snippet.
+Check contrast after a color change.
+This theme does not include Style Settings controls.
 
 ## Known limits
 
-- Desktop captures use Obsidian 1.14.4. Real mobile device use has not been verified.
-- A narrow desktop capture does not prove mobile compatibility.
-- Full keyboard navigation and assistive technology checks remain incomplete.
-- Decorative separators can have low contrast. This theme has no accessibility certification.
-- Font rendering can change with your operating system and installed fonts.
-- Community plugins can change the layout. Their compatibility has not been verified.
+- Monospace text fits fewer characters across narrow panes than most proportional fonts.
+- Headings use uppercase letters. This can change the appearance of case-sensitive identifiers.
+- Long code lines and wide tables can require horizontal scrolling.
+- The theme presents command notes. It does not execute commands or add a terminal.
+- The core accent picker does not control the terminal frame colors. Use `--term-accent` in a snippet.
+- System monospace fonts differ between operating systems. Line wraps can change with the font.
 
-## Feedback
+## License
 
-Open an issue with your Obsidian version, operating system, selected mode, and steps to reproduce the problem.
-Use a test note. Remove personal information from screenshots before you send them.
-
-## Credits and licence
-
-The original manifest credits U3 Theme Factory.
-NoteMods maintains this preview repository. The original CSS and copyright credits are preserved.
-Metadata and licence formatting were corrected for directory review. The MIT terms are unchanged.
-See [LICENSE](./LICENSE) for the MIT terms.
-
-[View the NoteMods catalog](https://notemods.com/themes/).
-
-## Original design description
-
-A monospace-first, square-cornered phosphor theme for terminal-flavoured technical notes.
-
-## Source provenance
-
-Original CSS in this directory (theme.css) is original work authored for this project.
-
-## Version 1.0.1
-
-This update corrects repository metadata. The theme CSS is unchanged.
-The score above is historical. These current repository files have not received a new independent review.
-The 95/100 acceptance gate remains unmet.
+[MIT License](LICENSE). Copyright (c) 2026 U3 Theme Factory.
+NoteMods maintains this theme. The original copyright notice remains in LICENSE.
