@@ -69,15 +69,16 @@ body {
   --term-bg-3: #0f150f;
   --term-ink: #b8f0c0;
   --term-ink-muted: #79b884;
-  --term-ink-faint: #79b884;
+  --term-ink-faint: #6a9f74;
   --term-rule: #64896c;
-  --term-accent: #4ade80;
-  --term-accent-strong: #7ee787;
+  --accent-h: 142; --accent-s: 69%; --accent-l: 58%;
+  --term-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --term-accent-strong: color-mix(in srgb, var(--term-accent) 78%, white);
   --term-link: #7ee787;
   --term-link-hover: #b6f2ba;
   --term-code-bg: #061006;
   --term-selection: #14401f;
-  --term-highlight: rgba(74, 222, 128, 0.28);
+  --term-highlight: color-mix(in srgb, var(--term-accent) 28%, transparent);
 
   --background-primary: var(--term-bg);
   --background-primary-alt: var(--term-bg-3);
@@ -85,9 +86,9 @@ body {
   --background-secondary-alt: var(--term-bg-3);
   --background-modifier-border: var(--term-rule);
   --background-modifier-border-hover: #79b884;
-  --background-modifier-border-focus: var(--term-accent);
-  --background-modifier-hover: rgba(74, 222, 128, 0.07);
-  --background-modifier-active-hover: rgba(74, 222, 128, 0.12);
+  --background-modifier-border-focus: var(--term-ink);
+  --background-modifier-hover: color-mix(in srgb, var(--term-accent) 7%, transparent);
+  --background-modifier-active-hover: color-mix(in srgb, var(--term-accent) 12%, transparent);
   --background-modifier-form-field: var(--term-bg-2);
   --background-modifier-cover: rgba(3, 6, 3, 0.9);
 
@@ -112,8 +113,8 @@ body {
   --link-unresolved-color: var(--term-ink-faint);
 
   --tag-color: var(--term-accent-strong);
-  --tag-background: rgba(74, 222, 128, 0.12);
-  --tag-background-hover: rgba(74, 222, 128, 0.20);
+  --tag-background: color-mix(in srgb, var(--term-accent) 12%, transparent);
+  --tag-background-hover: color-mix(in srgb, var(--term-accent) 20%, transparent);
   --tag-color-hover: var(--term-accent-strong);
 
   --code-background: var(--term-code-bg);
@@ -130,9 +131,9 @@ body {
   --code-value: #d2a8ff;
 
   --table-border-color: var(--term-rule);
-  --table-header-background: rgba(74, 222, 128, 0.08);
-  --table-header-background-hover: rgba(74, 222, 128, 0.12);
-  --table-row-background-hover: rgba(74, 222, 128, 0.05);
+  --table-header-background: color-mix(in srgb, var(--term-accent) 8%, transparent);
+  --table-header-background-hover: color-mix(in srgb, var(--term-accent) 12%, transparent);
+  --table-row-background-hover: color-mix(in srgb, var(--term-accent) 5%, transparent);
   --table-selection: var(--term-selection);
   --table-selection-border-color: var(--term-accent);
 
@@ -146,8 +147,8 @@ body {
   --nav-item-color: var(--term-ink-muted);
   --nav-item-color-hover: var(--term-ink);
   --nav-item-color-active: var(--term-ink);
-  --nav-item-background-hover: rgba(74, 222, 128, 0.07);
-  --nav-item-background-active: rgba(74, 222, 128, 0.14);
+  --nav-item-background-hover: color-mix(in srgb, var(--term-accent) 7%, transparent);
+  --nav-item-background-active: color-mix(in srgb, var(--term-accent) 14%, transparent);
   --nav-item-color-selected: var(--term-accent-strong);
   --nav-indentation-guide-color: #1a2e1e;
 
@@ -176,15 +177,16 @@ body {
   --term-bg-3: #eef4ec;
   --term-ink: #10241a;
   --term-ink-muted: #3f5f4a;
-  --term-ink-faint: #3f5f4a;
+  --term-ink-faint: #4f6b57;
   --term-rule: #5c7460;
-  --term-accent: #1a7f37;
-  --term-accent-strong: #0f6b30;
+  --accent-h: 137; --accent-s: 66%; --accent-l: 30%;
+  --term-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --term-accent-strong: color-mix(in srgb, var(--term-accent) 83%, black);
   --term-link: #0f6b30;
   --term-link-hover: #0a4f23;
   --term-code-bg: #e6efe4;
   --term-selection: #bfe3c6;
-  --term-highlight: rgba(26, 127, 55, 0.22);
+  --term-highlight: color-mix(in srgb, var(--term-accent) 22%, transparent);
 
   --background-primary: var(--term-bg);
   --background-primary-alt: var(--term-bg-3);
@@ -192,7 +194,7 @@ body {
   --background-secondary-alt: var(--term-bg-3);
   --background-modifier-border: var(--term-rule);
   --background-modifier-border-hover: #3f5f4a;
-  --background-modifier-border-focus: var(--term-accent);
+  --background-modifier-border-focus: var(--term-ink);
   --background-modifier-hover: rgba(16, 36, 26, 0.05);
   --background-modifier-active-hover: rgba(16, 36, 26, 0.09);
   --background-modifier-form-field: #ffffff;
@@ -209,8 +211,8 @@ body {
 
   --interactive-normal: #e6ede4;
   --interactive-hover: #dbe5d9;
-  --interactive-accent: #1a7f37;
-  --interactive-accent-hover: #0f6b30;
+  --interactive-accent: var(--term-accent);
+  --interactive-accent-hover: var(--term-accent-strong);
 
   --link-color: var(--term-link);
   --link-color-hover: var(--term-link-hover);
@@ -219,8 +221,8 @@ body {
   --link-unresolved-color: var(--term-ink-faint);
 
   --tag-color: var(--term-accent-strong);
-  --tag-background: rgba(26, 127, 55, 0.12);
-  --tag-background-hover: rgba(26, 127, 55, 0.20);
+  --tag-background: color-mix(in srgb, var(--term-accent) 12%, transparent);
+  --tag-background-hover: color-mix(in srgb, var(--term-accent) 20%, transparent);
   --tag-color-hover: var(--term-accent-strong);
 
   --code-background: var(--term-code-bg);
@@ -237,8 +239,8 @@ body {
   --code-value: #703ac0;
 
   --table-border-color: var(--term-rule);
-  --table-header-background: rgba(26, 127, 55, 0.09);
-  --table-header-background-hover: rgba(26, 127, 55, 0.13);
+  --table-header-background: color-mix(in srgb, var(--term-accent) 9%, transparent);
+  --table-header-background-hover: color-mix(in srgb, var(--term-accent) 13%, transparent);
   --table-row-background-hover: rgba(16, 36, 26, 0.04);
   --table-selection: var(--term-selection);
   --table-selection-border-color: var(--term-accent);
@@ -254,7 +256,7 @@ body {
   --nav-item-color-hover: var(--term-ink);
   --nav-item-color-active: var(--term-ink);
   --nav-item-background-hover: rgba(16, 36, 26, 0.05);
-  --nav-item-background-active: rgba(26, 127, 55, 0.12);
+  --nav-item-background-active: color-mix(in srgb, var(--term-accent) 12%, transparent);
   --nav-item-color-selected: var(--term-accent-strong);
   --nav-indentation-guide-color: #cfe0d2;
 
@@ -413,7 +415,7 @@ body {
 .markdown-rendered pre code,
 .markdown-preview-view pre code { border: none; background: transparent; padding: 0; }
 .markdown-source-view.mod-cm6 .HyperMD-codeblock-bg { background: var(--term-code-bg); }
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock { border-left: 3px solid var(--term-accent); }
+.markdown-source-view.mod-cm6 .HyperMD-codeblock { border: none; }
 
 /* ---------- horizontal rule -------------------------------------------- */
 .markdown-rendered hr,
@@ -429,7 +431,6 @@ body {
 .search-input-container input { border-radius: 0; }
 
 /* ---------- settings --------------------------------------------------- */
-.vertical-tab-nav-item.is-active { background: var(--term-accent); color: var(--text-on-accent); }
 .setting-item { border-top: 1px solid var(--background-modifier-border); }
 .setting-item-name { font-weight: 700; }
 
@@ -518,14 +519,11 @@ body.theme-light :focus-visible {
 }
 body.theme-light .cm-content:focus-visible,
 body.theme-dark .cm-content:focus-visible { outline: none; }
-body .cm-editor:has(.cm-content:focus-visible) {
-  box-shadow: inset 0 0 0 2px var(--term-ink-muted);
-}
 @media (max-width: 600px) {
   body { --file-margins: 16px; --h1-size: 1.45em; --h2-size: 1.2em; --table-cell-padding: 5px 7px; }
   .markdown-rendered h1 { overflow-wrap: anywhere; letter-spacing: 0.03em; }
   .markdown-rendered pre { padding: 0.7em; }
-  .markdown-rendered .table-wrapper { overflow-x: auto; }
+  .markdown-preview-view .table-wrapper { overflow-x: auto; overflow-y: hidden; }
 }
 
 /* Join the editor tag tokens into one square label. */
@@ -541,3 +539,95 @@ body .markdown-source-view.mod-cm6 .cm-hashtag.cm-hashtag-end {
   border-inline-start: 0;
   padding-inline: 0 0.35em;
 }
+
+/* Status records retain a colored frame and a compact title separator. */
+.callout {
+  background-color: rgba(var(--callout-color), 0.06);
+  border: 1px solid rgb(var(--callout-color));
+  border-inline-start-width: 3px;
+  --callout-title-color: rgb(var(--callout-color));
+}
+.callout .callout-title,
+.callout .callout-title .callout-icon,
+.callout .callout-icon .svg-icon {
+  color: rgb(var(--callout-color));
+  border-bottom-color: rgb(var(--callout-color));
+}
+.callout .callout-content > :first-child { margin-top: 0.5em; }
+.callout .callout-content > :last-child { margin-bottom: 0; }
+.callout[data-callout="warning"] { border-inline-start-style: double; border-inline-start-width: 5px; }
+.callout[data-callout="danger"] .callout-title { border-bottom-style: solid; }
+
+body { --tag-border-width: 0px; --blockquote-border-color: var(--term-accent); --blockquote-border-thickness: 3px; }
+body .markdown-rendered a.tag,
+body .markdown-preview-view a.tag { text-decoration: none; box-shadow: none; }
+body .vertical-tab-nav-item.is-active .vertical-tab-nav-item-icon,
+body .vertical-tab-nav-item.is-active .svg-icon { color: var(--text-on-accent); }
+body .setting-item.setting-item-heading { border-top: none; }
+
+/* The caret identifies editor focus. Control rings stay local to controls. */
+html body:is(.theme-light, .theme-dark) :is(button, a, input, textarea, select, [tabindex], .clickable-icon, .checkbox-container):not(.cm-content):focus-visible {
+  outline: 2px dashed var(--text-normal); outline-offset: 2px; box-shadow: none;
+}
+body.theme-light a:focus-visible, body.theme-dark a:focus-visible {
+  outline-offset: 1px; outline-width: 1px;
+}
+html body:is(.theme-light, .theme-dark) .markdown-source-view :is(.cm-content:focus-visible, .cm-editor.cm-focused) {
+  outline: none; box-shadow: none;
+}
+body .clickable-icon[aria-disabled="true"]:focus-visible { opacity: 1; }
+body .clickable-icon[aria-disabled="true"]:focus-visible svg { opacity: 0.4; }
+body .markdown-source-view.mod-cm6 .cm-table-widget .table-wrapper { overflow: visible; }
+
+/* Continuous background frames avoid an indented code rail. */
+body .markdown-source-view.mod-cm6 .HyperMD-codeblock { border: none; }
+body .markdown-source-view.mod-cm6 .HyperMD-codeblock-bg {
+  border-inline-start: 3px solid var(--term-accent);
+  border-inline-end: 1px solid var(--term-rule);
+}
+body .markdown-source-view.mod-cm6 .HyperMD-codeblock-begin-bg { border-top: 1px solid var(--term-rule); }
+body .markdown-source-view.mod-cm6 .HyperMD-codeblock-end-bg { border-bottom: 1px solid var(--term-rule); }
+body .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-indent::before { display: none; }
+body .markdown-source-view.mod-cm6 .cm-content span.cm-inline-code:not(.cm-formatting) {
+  color: var(--code-normal); background: var(--term-code-bg);
+  border: 1px solid var(--term-rule); border-radius: 0; padding: 0.05em 0.2em;
+}
+body .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+  background: var(--term-bg-2); color: var(--term-ink-muted); font-style: normal;
+}
+body .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote::before { border-inline-start: 3px solid var(--term-accent); }
+.markdown-rendered .task-list-item.is-checked > :is(ul, ol) {
+  display: inline-block; width: 100%; color: var(--text-normal);
+}
+
+/* Selected commands read as a terminal cursor bar. */
+body .suggestion-item.is-selected,
+body .prompt .suggestion-item.is-selected,
+body .search-result-file-match.is-selected {
+  background: var(--interactive-accent); color: var(--text-on-accent);
+  box-shadow: inset 3px 0 0 var(--text-on-accent);
+}
+body .suggestion-item.is-selected :is(.suggestion-title, .suggestion-note, .suggestion-hotkey, .suggestion-content) { color: inherit; }
+.prompt { border-top: 3px solid var(--term-accent); border-radius: 0; }
+.prompt-input-container { border-bottom: 1px dashed var(--term-rule); }
+body .setting-item-control :is(button:not(.mod-cta):not(.clickable-icon), select.dropdown) {
+  border: 1px solid var(--term-rule); background-color: var(--interactive-normal);
+}
+.theme-dark { --interactive-normal: #213b25; --interactive-hover: #2a4930; }
+@media (prefers-reduced-motion: reduce) {
+  html body:is(.theme-light, .theme-dark) :is(*, *::before, *::after) {
+    transition: none; animation-duration: 0s; animation-iteration-count: 1; scroll-behavior: auto;
+  }
+}
+
+/* Native list-group toggles need the same local keyboard ring. */
+body:is(.theme-light, .theme-dark) .setting-group.mod-list .checkbox-container.checkbox-container:focus-visible {
+  outline: 2px dashed var(--text-normal); outline-offset: 2px; box-shadow: none;
+}
+
+/* Formatting ticks stay separate from the inline-code label frame. */
+body .markdown-source-view.mod-cm6 .cm-content span.cm-formatting-code {
+  border: none; padding-inline: 0; background: transparent;
+}
+
+/* Keep Obsidian node-inserted lifecycle events. Zero duration removes visible motion. */
